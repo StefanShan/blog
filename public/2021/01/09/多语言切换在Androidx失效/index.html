@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+  <meta name="baidu-site-verification" content="codeva-JDd1vVCbAf">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"101wr.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="快速定位与修复出现问题时的调用方式： 12345678public class I18nBaseActivity extends AppCompatActivity &amp;#123;    @Override    protected void attachBaseContext(Context newBase) &amp;#123;      	&#x2F;&#x2F;切换多语言，然后将新生成的 context 覆盖给 att">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多语言切换在Androidx失效">
+<meta property="og:url" content="https://101wr.cn/2021/01/09/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%88%87%E6%8D%A2%E5%9C%A8Androidx%E5%A4%B1%E6%95%88/">
+<meta property="og:site_name" content="青杉">
+<meta property="og:description" content="快速定位与修复出现问题时的调用方式： 12345678public class I18nBaseActivity extends AppCompatActivity &amp;#123;    @Override    protected void attachBaseContext(Context newBase) &amp;#123;      	&#x2F;&#x2F;切换多语言，然后将新生成的 context 覆盖给 att">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-09T13:27:00.000Z">
+<meta property="article:modified_time" content="2023-08-01T07:03:35.204Z">
+<meta property="article:author" content="青杉">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="AndroidX">
+<meta property="article:tag" content="多语言">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://101wr.cn/2021/01/09/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%88%87%E6%8D%A2%E5%9C%A8Androidx%E5%A4%B1%E6%95%88/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>多语言切换在Androidx失效 | 青杉</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">青杉</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2021/01/09/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%88%87%E6%8D%A2%E5%9C%A8Androidx%E5%A4%B1%E6%95%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          多语言切换在Androidx失效
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-09 21:27:00" itemprop="dateCreated datePublished" datetime="2021-01-09T21:27:00+08:00">2021-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-01 15:03:35" itemprop="dateModified" datetime="2023-08-01T15:03:35+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95-%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">踩坑记录/问题合集</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="快速定位与修复"><a href="#快速定位与修复" class="headerlink" title="快速定位与修复"></a>快速定位与修复</h2><p>出现问题时的调用方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">I18nBaseActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">attachBaseContext</span><span class="params">(Context newBase)</span> &#123;</span><br><span class="line">      	<span class="comment">//切换多语言，然后将新生成的 context 覆盖给 attachBaseContext()</span></span><br><span class="line">        <span class="type">Context</span> <span class="variable">context</span> <span class="operator">=</span> MultiLanguageUtils.changeContextLocale(newBase);</span><br><span class="line">        <span class="built_in">super</span>.attachBaseContext(context);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<p>解决方法：</p>
+<p>Androidx(appcompat:1.2.0) 中对<code>attachBaseContext()</code>包装了一层<code>ContextThemeWrapper</code>，但就是因为他给包的这一层逻辑有问题，导致了多语言切换时效。所以咱们手动给包一层</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">I18nBaseActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">attachBaseContext</span><span class="params">(Context newBase)</span> &#123;</span><br><span class="line">      	<span class="comment">//切换多语言，然后将新生成的 context 覆盖给 attachBaseContext()</span></span><br><span class="line">        <span class="type">Context</span> <span class="variable">context</span> <span class="operator">=</span> MultiLanguageUtils.changeContextLocale(newBase);</span><br><span class="line">       <span class="comment">//兼容appcompat 1.2.0后切换语言失效问题</span></span><br><span class="line">        <span class="keyword">final</span> <span class="type">Configuration</span> <span class="variable">configuration</span> <span class="operator">=</span> context.getResources().getConfiguration();</span><br><span class="line">        <span class="keyword">final</span> <span class="type">ContextThemeWrapper</span> <span class="variable">wrappedContext</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ContextThemeWrapper</span>(context,</span><br><span class="line">                R.style.Base_Theme_AppCompat_Empty) &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">applyOverrideConfiguration</span><span class="params">(Configuration overrideConfiguration)</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (overrideConfiguration != <span class="literal">null</span>) &#123;</span><br><span class="line">                    overrideConfiguration.setTo(configuration);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">super</span>.applyOverrideConfiguration(overrideConfiguration);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">super</span>.attachBaseContext(wrappedContext);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>上面仅说明了怎么解决问题，没有体现多语言切换的实现。所以我封装了一个库(实质就是一个工具类)，该库已经适配了该问题，大家可以直接copy出来使用</p>
+<blockquote>
+<p>Github : <a target="_blank" rel="noopener" href="https://github.com/StefanShan/MulituLanguage">https://github.com/StefanShan/MulituLanguage</a></p>
+</blockquote>
+<h2 id="详细排查过程与原理"><a href="#详细排查过程与原理" class="headerlink" title="详细排查过程与原理"></a>详细排查过程与原理</h2><p>最近项目升级为 Androidx，发现之前的多语言切换失效了。经过一点点排除方式排查，发现是由于升到 Androidx 后项目引入了 <code>androidx.appcompat:appcompat:1.2.0</code>来替代之前的<code>v7</code>包。那么根据多语言切换原理来看看是什么原因。</p>
+<blockquote>
+<p>多语言切换原理：修改 context 的 Locale 配置，将新生成的 context 设置给 attachBaseContext 实现配置的替换。</p>
+</blockquote>
+<p>先来看下 androidx 下的 AppCompatActivity# attachBaseContext() 源码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">attachBaseContext</span><span class="params">(Context newBase)</span> &#123;</span><br><span class="line">  <span class="built_in">super</span>.attachBaseContext(getDelegate().attachBaseContext2(newBase));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>哦~ 有个代理类处理了传入的 context，看下这个代理类 <code>getDelegate()</code> 的<code>attachBaseContext2()</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> The &#123;<span class="doctag">@link</span> AppCompatDelegate&#125; being used by this Activity.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"><span class="keyword">public</span> AppCompatDelegate <span class="title function_">getDelegate</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (mDelegate == <span class="literal">null</span>) &#123;</span><br><span class="line">    mDelegate = AppCompatDelegate.create(<span class="built_in">this</span>, <span class="built_in">this</span>);	<span class="comment">//代理对象是通过 AppCompatDelegate create出来的，那继续往下看</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> mDelegate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里直接看 AppCompatDelegateImpl 类，该类是 AppCompatDelegate 类的实现类</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="meta">@CallSuper</span></span><br><span class="line"><span class="keyword">public</span> Context <span class="title function_">attachBaseContext2</span><span class="params">(<span class="meta">@NonNull</span> <span class="keyword">final</span> Context baseContext)</span> &#123;</span><br><span class="line">  <span class="comment">//......</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 这段逻辑是：如果传入的 context 是经过 ContextThemeWrapper 封装的，则直接使用该 context 配置进行覆盖</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="comment">// If the base context is a ContextThemeWrapper (thus not an Application context)</span></span><br><span class="line">  <span class="comment">// and nobody&#x27;s touched its Resources yet, we can shortcut and directly apply our</span></span><br><span class="line">  <span class="comment">// override configuration.</span></span><br><span class="line">  <span class="keyword">if</span> (sCanApplyOverrideConfiguration</span><br><span class="line">      &amp;&amp; baseContext <span class="keyword">instanceof</span> android.view.ContextThemeWrapper) &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">Configuration</span> <span class="variable">config</span> <span class="operator">=</span> createOverrideConfigurationForDayNight(</span><br><span class="line">      baseContext, modeToApply, <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">if</span> (DEBUG) &#123;</span><br><span class="line">      Log.d(TAG, String.format(<span class="string">&quot;Attempting to apply config to base context: %s&quot;</span>,</span><br><span class="line">                               config.toString()));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      ContextThemeWrapperCompatApi17Impl.applyOverrideConfiguration(</span><br><span class="line">        (android.view.ContextThemeWrapper) baseContext, config);</span><br><span class="line">      <span class="keyword">return</span> baseContext;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IllegalStateException e) &#123;</span><br><span class="line">      <span class="keyword">if</span> (DEBUG) &#123;</span><br><span class="line">        Log.d(TAG, <span class="string">&quot;Failed to apply configuration to base context&quot;</span>, e);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ......</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 下面这段逻辑是：通过 packageManger 获取配置，然后和传入的 context 配置进行对比，覆盖修改过的配置。</span></span><br><span class="line"><span class="comment">  * 这里有个关键因素，通过 packageManager 获取的配置与 context 的配置进行 diff 更新，并将 diff 结果赋值给新建的 configration。这就会导致，当这一次切换成功后，杀死进程下次启动时，由于 packageManager 配置的语言 与 context 配置的语言一致，而直接跳过，并没有给新建的 configration进行赋值。最终导致多语言切换失效。同理，从 ActivityA 设置了多语言，然后重启 ActivityA，再从ActivityA 跳转到 ActivityB，此时ActivityB 多语言并没有生效。</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="comment">// We can&#x27;t trust the application resources returned from the base context, since they</span></span><br><span class="line">  <span class="comment">// may have been altered by the caller, so instead we&#x27;ll obtain them directly from the</span></span><br><span class="line">  <span class="comment">// Package Manager.</span></span><br><span class="line">  <span class="keyword">final</span> Configuration appConfig;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    appConfig = baseContext.getPackageManager().getResourcesForApplication(</span><br><span class="line">      baseContext.getApplicationInfo()).getConfiguration();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (PackageManager.NameNotFoundException e) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;Application failed to obtain resources from itself&quot;</span>, e);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The caller may have directly modified the base configuration, so we&#x27;ll defensively</span></span><br><span class="line">  <span class="comment">// re-structure their changes as a configuration overlay and merge them with our own</span></span><br><span class="line">  <span class="comment">// night mode changes. Diffing against the application configuration reveals any changes.</span></span><br><span class="line">  <span class="keyword">final</span> <span class="type">Configuration</span> <span class="variable">baseConfig</span> <span class="operator">=</span> baseContext.getResources().getConfiguration();</span><br><span class="line">  <span class="keyword">final</span> Configuration configOverlay;</span><br><span class="line">  <span class="keyword">if</span> (!appConfig.equals(baseConfig)) &#123;</span><br><span class="line">    configOverlay = generateConfigDelta(appConfig, baseConfig);		<span class="comment">//这里是关键</span></span><br><span class="line">    <span class="keyword">if</span> (DEBUG) &#123;</span><br><span class="line">      Log.d(TAG,</span><br><span class="line">            <span class="string">&quot;Application config (&quot;</span> + appConfig + <span class="string">&quot;) does not match base config (&quot;</span></span><br><span class="line">            + baseConfig + <span class="string">&quot;), using base overlay: &quot;</span> + configOverlay);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    configOverlay = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (DEBUG) &#123;</span><br><span class="line">      Log.d(TAG, <span class="string">&quot;Application config (&quot;</span> + appConfig + <span class="string">&quot;) matches base context &quot;</span></span><br><span class="line">            + <span class="string">&quot;config, using empty base overlay&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> <span class="type">Configuration</span> <span class="variable">config</span> <span class="operator">=</span> createOverrideConfigurationForDayNight(</span><br><span class="line">    baseContext, modeToApply, configOverlay);</span><br><span class="line">  <span class="keyword">if</span> (DEBUG) &#123;</span><br><span class="line">    Log.d(TAG, String.format(<span class="string">&quot;Applying night mode using ContextThemeWrapper and &quot;</span></span><br><span class="line">                             + <span class="string">&quot;applyOverrideConfiguration(). Config: %s&quot;</span>, config.toString()));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Next, we&#x27;ll wrap the base context to ensure any method overrides or themes are left</span></span><br><span class="line">  <span class="comment">// intact. Since ThemeOverlay.AppCompat theme is empty, we&#x27;ll get the base context&#x27;s theme.</span></span><br><span class="line">  <span class="keyword">final</span> <span class="type">ContextThemeWrapper</span> <span class="variable">wrappedContext</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ContextThemeWrapper</span>(baseContext,</span><br><span class="line">                                                                     R.style.Theme_AppCompat_Empty);</span><br><span class="line">  wrappedContext.applyOverrideConfiguration(config);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ......</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">super</span>.attachBaseContext2(wrappedContext);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Configuration <span class="title function_">generateConfigDelta</span><span class="params">(<span class="meta">@NonNull</span> Configuration base,</span></span><br><span class="line"><span class="params">                                                 <span class="meta">@Nullable</span> Configuration change)</span> &#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="type">Configuration</span> <span class="variable">delta</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Configuration</span>();</span><br><span class="line">  delta.fontScale = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//......</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//这里可以看到，如果两个配置相等，则直接跳过了，并没有给新创建的 delta 的 locale 赋值。</span></span><br><span class="line">  <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">24</span>) &#123;</span><br><span class="line">    ConfigurationImplApi24.generateConfigDelta_locale(base, change, delta); </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!ObjectsCompat.equals(base.locale, change.locale)) &#123;	</span><br><span class="line">      delta.locale = change.locale;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">	<span class="comment">//......</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ok，上面注释已经非常清晰了。这里简单总结下：</p>
+<blockquote>
+<p><code>AppCompatActivity# attachBaseContext()</code> 方法在 Androidx 进行了包装，具体实现在 <code>AppCompatDelegateImpl# attachBaseContext2() </code>。该包装方法实现了两套逻辑：</p>
+<ol>
+<li>传入的 context 是经过 ContextThemeWrapper 封装的，则直接使用该 context 配置(包含语言)进行覆盖</li>
+<li>传入的 context 未经过 ContextThemeWrapper 封装，则从 PackageManger 中获取配置(包含语言)，然后和传入的 context 配置(包含语言)进行对比，并新创建了一个 configration 对象，如果两者有对比不同的配置则赋值给这个 configration，如果相同则跳过，最后将这个新建的 configration 作为最终配置结果进行覆盖。</li>
+</ol>
+<p>而多语言问题就出现在 [2] 这套逻辑上，如果 PackageManager 与 传入的 context 某个配置项一致时就不会给新建的 configration 赋值该配置项。这就会导致当这一次切换成功后，杀死进程下次启动时，由于 packageManager 配置的语言 与 context 配置的语言一致，而直接跳过，并没有给新建的 configration进行赋值，最终表现就是多语言失效。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/AndroidX/" rel="tag"># AndroidX</a>
+              <a href="/tags/%E5%A4%9A%E8%AF%AD%E8%A8%80/" rel="tag"># 多语言</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/27/2020%E5%B9%B4%E7%BB%88%E7%BB%93/" rel="prev" title="2020年总结 & 2021年Flag">
+      <i class="fa fa-chevron-left"></i> 2020年总结 & 2021年Flag
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E4%B8%8E%E4%BF%AE%E5%A4%8D"><span class="nav-number">1.</span> <span class="nav-text">快速定位与修复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">封装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E6%8E%92%E6%9F%A5%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">详细排查过程与原理</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="青杉"
+      src="/images/head_img.jpeg">
+  <p class="site-author-name" itemprop="name">青杉</p>
+  <div class="site-description" itemprop="description">一切烦恼都是想的太多，做的太少。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/StefanShan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;StefanShan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://juejin.cn/user/3175045310722119" title="Juejin → https:&#x2F;&#x2F;juejin.cn&#x2F;user&#x2F;3175045310722119" rel="noopener" target="_blank"><i class="fab custom juejin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">鲁ICP备2023023514号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">青杉</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">19k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">18 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
