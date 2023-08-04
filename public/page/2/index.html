@@ -164,6 +164,787 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2021/06/19/ViewModel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/19/ViewModel/" class="post-title-link" itemprop="url">Jetpack 组件之 ViewModel 使用与浅析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-19 17:06:00" itemprop="dateCreated datePublished" datetime="2021-06-19T17:06:00+08:00">2021-06-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-01 16:05:25" itemprop="dateModified" datetime="2023-08-01T16:05:25+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jetpack/" itemprop="url" rel="index"><span itemprop="name">Jetpack</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>13k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>12 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="ViewModel-是什么？"><a href="#ViewModel-是什么？" class="headerlink" title="ViewModel 是什么？"></a>ViewModel 是什么？</h1><p><strong>官方解释：</strong></p>
+<blockquote>
+<p>The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way. The ViewModel class allows data to survive configuration changes such as screen rotations.</p>
+</blockquote>
+<p><strong>个人理解：</strong> <br/><br>ViewModel 是 UI 和数据的桥接层，承担 UI 层(Activity &#x2F; Fragment) 的数据处理逻辑，同时拥有维护自己的生命周期，而且可以在屏幕旋转时仍保存数据。下面是官方提供的一张屏幕旋转时 ViewModel 的生命周期图。<br><img src="/images/viewModel/1.webp" alt="loading-ag-5085"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/19/ViewModel/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2021/06/05/Lifecycle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/05/Lifecycle/" class="post-title-link" itemprop="url">Jetpack 组件之 Lifecycle 使用与浅析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-05 19:35:00" itemprop="dateCreated datePublished" datetime="2021-06-05T19:35:00+08:00">2021-06-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-01 16:05:06" itemprop="dateModified" datetime="2023-08-01T16:05:06+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jetpack/" itemprop="url" rel="index"><span itemprop="name">Jetpack</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>10 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Lifecycle-是什么？"><a href="#Lifecycle-是什么？" class="headerlink" title="Lifecycle 是什么？"></a>Lifecycle 是什么？</h1><p><strong>官方解释：</strong></p>
+<blockquote>
+<p>Lifecycle is a class that holds the information about the lifecycle state of a component (like an activity or a fragment) and allows other objects to observe this state.</p>
+</blockquote>
+<p><strong>个人理解：</strong><br>Lifecycle 就是管理组件( Activity &#x2F; Fragment )生命周期的一个工具(类），可以在其他组件( Activity &#x2F; Fragment 之外)监听生命周期变化。该组件是 Jetpack 架构组件库(Jetpack Architecture Components)中非常重要的一部分，例如 LiveData、ViewModel 等组件，必须依赖该组件实现监听和处理生命周期变化。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/05/Lifecycle/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2021/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%88%9B%E5%BB%BA%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%88%9B%E5%BB%BA%E5%9E%8B/" class="post-title-link" itemprop="url">创建型(单例、工厂、建造)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-04 20:05:00" itemprop="dateCreated datePublished" datetime="2021-03-04T20:05:00+08:00">2021-03-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-04 18:11:51" itemprop="dateModified" datetime="2023-08-04T18:11:51+08:00">2023-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">设计模式&架构</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><p>在类加载期间，就已经将 instance 静态实现初始化好，可以保证 instance 实例的创建时线程安全的。不过也导致不支持延迟加载实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IdGenerator</span>()&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">IdGenerator</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">AtomicLong</span> <span class="variable">id</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AtomicLong</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">IdGenerator</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">IdGenerator</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> IdGenerator <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        retrun instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">long</span> <span class="title function_">getId</span><span class="params">()</span>&#123;</span><br><span class="line">        retrun id.incrementAndGet();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%88%9B%E5%BB%BA%E5%9E%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2021/02/17/%E8%BD%AF%E6%8A%80%E8%83%BD-%E4%BB%A3%E7%A0%81%E4%B9%8B%E5%A4%96%E7%9A%84%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/17/%E8%BD%AF%E6%8A%80%E8%83%BD-%E4%BB%A3%E7%A0%81%E4%B9%8B%E5%A4%96%E7%9A%84%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97md/" class="post-title-link" itemprop="url">《软技能——代码之外的生存指南》</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-17 12:28:00" itemprop="dateCreated datePublished" datetime="2021-02-17T12:28:00+08:00">2021-02-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-01 15:44:31" itemprop="dateModified" datetime="2023-08-01T15:44:31+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1、将自己的职业当做一家企业"><a href="#1、将自己的职业当做一家企业" class="headerlink" title="1、将自己的职业当做一家企业"></a>1、将自己的职业当做一家企业</h2><p>需要你思考并做到以下几点：</p>
+<ol>
+<li><p>正在提供怎样的服务，以及如何营销</p>
+</li>
+<li><p>想方法提升服务</p>
+</li>
+<li><p>专注为哪一特定的客户或者行业提供服务</p>
+</li>
+<li><p>集中精力成为一位专家，专门为某一特定类型客户提供专业的整体服务</p>
+</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/17/%E8%BD%AF%E6%8A%80%E8%83%BD-%E4%BB%A3%E7%A0%81%E4%B9%8B%E5%A4%96%E7%9A%84%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97md/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2021/02/06/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99-SOLID%E3%80%81DRY%E3%80%81KISS%E3%80%81YAGNI%E3%80%81LOD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/06/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99-SOLID%E3%80%81DRY%E3%80%81KISS%E3%80%81YAGNI%E3%80%81LOD/" class="post-title-link" itemprop="url">设计原则-SOLID、DRY、KISS、YAGNI、LOD</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-06 20:24:00" itemprop="dateCreated datePublished" datetime="2021-02-06T20:24:00+08:00">2021-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-04 18:12:10" itemprop="dateModified" datetime="2023-08-04T18:12:10+08:00">2023-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">设计模式&架构</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-SOLID原则"><a href="#1-SOLID原则" class="headerlink" title="1. SOLID原则"></a>1. SOLID原则</h1><h2 id="1-1-SRP-Single-Responsibility-Principle-单一职责"><a href="#1-1-SRP-Single-Responsibility-Principle-单一职责" class="headerlink" title="1.1 SRP(Single Responsibility Principle) 单一职责"></a>1.1 SRP(Single Responsibility Principle) 单一职责</h2><h3 id="1-1-1-定义：一个类或模块只负责完成一个功能。"><a href="#1-1-1-定义：一个类或模块只负责完成一个功能。" class="headerlink" title="1.1.1 定义：一个类或模块只负责完成一个功能。"></a>1.1.1 定义：一个类或模块只负责完成一个功能。</h3><p>理解：不要设计大而全的类，要设计粒度小、高性能单一的类。该原则的目的是为了实现代码高内聚、低耦合、提高代码复用性、可读性以及可维护性。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/06/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99-SOLID%E3%80%81DRY%E3%80%81KISS%E3%80%81YAGNI%E3%80%81LOD/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2021/01/09/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%88%87%E6%8D%A2%E5%9C%A8Androidx%E5%A4%B1%E6%95%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/09/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%88%87%E6%8D%A2%E5%9C%A8Androidx%E5%A4%B1%E6%95%88/" class="post-title-link" itemprop="url">多语言切换在Androidx失效</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-09 21:27:00" itemprop="dateCreated datePublished" datetime="2021-01-09T21:27:00+08:00">2021-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-01 15:03:35" itemprop="dateModified" datetime="2023-08-01T15:03:35+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95-%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">踩坑记录/问题合集</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="快速定位与修复"><a href="#快速定位与修复" class="headerlink" title="快速定位与修复"></a>快速定位与修复</h2><p>出现问题时的调用方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">I18nBaseActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">attachBaseContext</span><span class="params">(Context newBase)</span> &#123;</span><br><span class="line">      	<span class="comment">//切换多语言，然后将新生成的 context 覆盖给 attachBaseContext()</span></span><br><span class="line">        <span class="type">Context</span> <span class="variable">context</span> <span class="operator">=</span> MultiLanguageUtils.changeContextLocale(newBase);</span><br><span class="line">        <span class="built_in">super</span>.attachBaseContext(context);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/09/%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%88%87%E6%8D%A2%E5%9C%A8Androidx%E5%A4%B1%E6%95%88/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2020/12/27/2020%E5%B9%B4%E7%BB%88%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/27/2020%E5%B9%B4%E7%BB%88%E7%BB%93/" class="post-title-link" itemprop="url">2020年总结 & 2021年Flag</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-27 17:54:00" itemprop="dateCreated datePublished" datetime="2020-12-27T17:54:00+08:00">2020-12-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-01 15:03:35" itemprop="dateModified" datetime="2023-08-01T15:03:35+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">年终总结</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>748</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="回顾2020"><a href="#回顾2020" class="headerlink" title="回顾2020"></a>回顾2020</h1><p>2020 年是不平凡的一年，众所周知的原因，今年很多公司都在裁员，幸运的是我司没有裁员，可以让我安稳的度过了这艰难的一年。先回顾下年初立下的 Flag，看下有哪些进步与遗憾。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/27/2020%E5%B9%B4%E7%BB%88%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://101wr.cn/2020/07/24/%E5%85%B3%E4%BA%8E%E2%80%9C%E4%BF%9D%E7%95%99%E4%B8%A4%E4%BD%8D%E5%B0%8F%E6%95%B0%E2%80%9D%E5%AF%BC%E8%87%B4%E7%9A%84Crash/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_img.jpeg">
+      <meta itemprop="name" content="青杉">
+      <meta itemprop="description" content="一切烦恼都是想的太多，做的太少。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青杉">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/24/%E5%85%B3%E4%BA%8E%E2%80%9C%E4%BF%9D%E7%95%99%E4%B8%A4%E4%BD%8D%E5%B0%8F%E6%95%B0%E2%80%9D%E5%AF%BC%E8%87%B4%E7%9A%84Crash/" class="post-title-link" itemprop="url">关于“保留两位小数”导致的Crash</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-24 20:03:00" itemprop="dateCreated datePublished" datetime="2020-07-24T20:03:00+08:00">2020-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-01 15:03:35" itemprop="dateModified" datetime="2023-08-01T15:03:35+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95-%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">踩坑记录/问题合集</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近在日常版本开发中，QA 发现某一功能国内版本没有问题，但是海外版本必现 Crash。当时收到Bug记录时一脸懵逼，同一套代码怎么会国内没问题，海外版本却必现 Crash 呢。找 QA 打印了 Crash 日志如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">07-22 21:20:33.409 16542 16542 E AndroidRuntime: FATAL EXCEPTION: main</span><br><span class="line">07-22 21:20:33.409 16542 16542 E AndroidRuntime: Process: com.xxx.xxxoverseas, PID: 16542</span><br><span class="line">07-22 21:20:33.409 16542 16542 E AndroidRuntime: java.lang.NumberFormatException: For input string: &quot;,01&quot;</span><br><span class="line">07-22 21:20:33.409 16542 16542 E AndroidRuntime: 	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)</span><br><span class="line">07-22 21:20:33.409 16542 16542 E AndroidRuntime: 	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)</span><br><span class="line">07-22 21:20:33.409 16542 16542 E AndroidRuntime: 	at java.lang.Double.parseDouble(Double.java:538)</span><br><span class="line">07-22 21:20:33.409 16542 16542 E AndroidRuntime: 	at com.xxxxx.VoiceMessagePresenter$RecordVoiceListener.onAudioVolume(VoiceMessagePresenter.java:90)</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/24/%E5%85%B3%E4%BA%8E%E2%80%9C%E4%BF%9D%E7%95%99%E4%B8%A4%E4%BD%8D%E5%B0%8F%E6%95%B0%E2%80%9D%E5%AF%BC%E8%87%B4%E7%9A%84Crash/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://101wr.cn/2020/02/24/List%E7%9A%84ForEach%E5%8F%AF%E8%83%BD%E5%AF%BC%E8%87%B4ConcurrentModificationException/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -423,20 +1204,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -482,12 +1263,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:04</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
 
         

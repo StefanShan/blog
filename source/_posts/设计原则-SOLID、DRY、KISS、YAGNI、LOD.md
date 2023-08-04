@@ -2,7 +2,7 @@
 title: 设计原则-SOLID、DRY、KISS、YAGNI、LOD
 date: 2021/2/6 20:24:00
 categories:
-- 设计模式
+- 设计模式&架构
 tags:
 - 设计模式
 - 设计原则
