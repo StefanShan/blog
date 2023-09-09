@@ -1,6 +1,6 @@
 ---
-title: List、Set、Map 一篇全通
-date: 2022/11/06
+title: Java反射
+date: 2022/11/28
 categories:
 - Java
 tags:
@@ -9,6 +9,8 @@ tags:
 
 # new 对象的过程
 ![](../images/java反射/java_reflection_1.jpg)
+
+<!-- more -->
 
 **拓展点：**
 

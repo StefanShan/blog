@@ -11,6 +11,7 @@ tags:
 
 # 结构图
 ![](../images/list_set_map/list_set_map.jpg)
+<!-- more -->
 # List
 ## Vector
 ### 内部存储结构
