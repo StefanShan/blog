@@ -2,9 +2,9 @@
 title: JVM 一篇全通
 date: 2022/11/24
 categories:
-- Java
-- Android
-- JVM
+- [Java]
+- [Android]
+- [JVM]
 ---
 
 ![JVM内存分区.webp](../images/jvm/1.jpg)

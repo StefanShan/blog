@@ -2,8 +2,8 @@
 title: ThreadLocal 如何实现线程间数据隔离？
 date: 2022/11/17
 categories:
-- Android
-- 源码解读
+- [Android]
+- [源码解读]
 tags:
 - ThreadLocal
 ---
