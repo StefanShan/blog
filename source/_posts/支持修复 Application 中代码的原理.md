@@ -3,7 +3,8 @@ title: 支持热修复 Application 中代码的原理
 date: 2023/08/09
 categories:
 - [Android]
-- [源码解读,Tinker]
+- [源码解读]
+- [Tinker]
 tags:
 - Tinker
 ---

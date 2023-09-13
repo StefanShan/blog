@@ -3,7 +3,8 @@ title: Tinker Patch 包生效原理 - Resource
 date: 2023/08/25
 categories:
 - [Android]
-- [源码解读, Tinker]
+- [源码解读]
+- [Tinker]
 tags:
 - Tinker
 ---

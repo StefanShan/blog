@@ -3,7 +3,8 @@ title: Tinker Patch 包生效原理 - Dex
 date: 2023/08/23
 categories:
 - [Android]
-- [源码解读, Tinker]
+- [Tinker]
+- [源码解读]
 tags:
 - Tinker
 ---
