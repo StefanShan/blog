@@ -4,13 +4,13 @@
 .linkcard {
     background-color: var(--vp-c-bg-soft);
     border-radius: 8px;
-    padding: 8px 16px 8px 8px;
+    padding: 16px 16px 16px 16px;
     transition: color 0.5s, background-color 0.5s;
   }
   
   /* 卡片鼠标悬停 */
   .linkcard:hover {
-    background-color: var(--vp-c-yellow-soft);
+    background-color: #1e88e525;
   }
   
   /* 链接样式 */
@@ -23,7 +23,7 @@
   .linkcard .description {
     flex: 1;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 25px;
     color: var(--vp-c-text-1);
     margin: 0 0 0 16px;
@@ -33,6 +33,7 @@
   /* 描述链接文字2 */
   .linkcard .description span {
     font-size: 14px;
+    color: var(--vp-c-text-3);
   }
   
   /* logo图片 */

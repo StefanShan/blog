@@ -3,7 +3,7 @@ import timeline from "vitepress-markdown-timeline";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "青杉的博客",
+  title: "青杉",
   description: "Java、Kotlin、Dart、JS/TS、Android、Flutter、前端、后端、开发总结、读书笔记、所思所想",
   base: "/blog/",
   //匹配应排除作为源内容输出的 markdown 文件
@@ -35,17 +35,26 @@ export default defineConfig({
 
     //侧边栏
     sidebar: {
-      // 'Java': [
-      //   {
-      //     text: 'Java',
-      //     collapsed: true,
-      //     items: [
-      //       { text: 'Index', link: '/Java/' },
-      //       { text: 'test', link: '/Java/test' },
-      //       { text: 'Two', link: '/Java/two' }
-      //     ]
-      //   }
-      // ],
+      'KnowledgeRepo': [
+        {
+          text: 'Java',
+          items: [
+            { text: '源码解析 ThreadLocal', link: '/KnowledgeRepo/Java/源码解析 ThreadLocal' },
+            { text: 'Java 与 Kotlin 中的泛型', link: '/KnowledgeRepo/Java/泛型' },
+            { text: 'Java反射', link: '/KnowledgeRepo/Java/Java反射' },
+            { text: 'Exception与Error', link: '/KnowledgeRepo/Java/Exception_Error' },
+          
+          ]
+        },
+        // {
+        //   text: 'Android',
+        //   items: [
+        //     // { text: 'Index', link: '/KnowledgeRepo/index' },
+        //     { text: 'Java', link: '/Java/main' },
+        //     { text: 'Android', link: '/Android/' }
+        //   ]
+        // }
+      ],
       // 'Android': [
       //   {
       //     text: 'Android',
@@ -66,7 +75,7 @@ export default defineConfig({
 
     //社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' } 
+      { icon: 'github', link: 'https://github.com/StefanShan' } 
     ],
 
     //页脚
@@ -77,9 +86,9 @@ export default defineConfig({
 
     //右侧大纲
     outline: { 
-      level: [2,4], // 显示2-4级标题
+      level: [1,4], // 显示2-4级标题
       // level: 'deep', // 显示2-6级标题
-      label: '当前页大纲' // 文字显示
+      label: '文章大纲' // 文字显示
     },
 
     //自定义上下页名

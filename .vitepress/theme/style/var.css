@@ -2,16 +2,9 @@
 
 /* var.css */
 :root {
-  --vp-c-brand-1: #18794e;
-  --vp-c-brand-2: #299764;
-  --vp-c-brand-3: #30a46c;
-  --vp-custom-block-tip-bg: var(--vp-c-green-soft); /*提示框背景颜色*/
-}
-
-.dark {
-  --vp-c-brand-1: #3dd68c;
-  --vp-c-brand-2: #30a46c;
-  --vp-c-brand-3: #298459;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #1E88E5,#9C27B0, #FDD835);
+  --vp-custom-block-tip-bg: var(#1E88E5); /*提示框背景颜色*/
 }
 
 /* h1 {
@@ -26,9 +19,9 @@
 .vp-doc blockquote {
     border-radius: 5px;
     padding: 10px 16px;
-    background-color: var(--vp-c-green-soft);
+    background-color: #1e88e511;
     position: relative;
-    border-left: 4px solid #30a46c;
+    border-left: 4px solid #1e88e58d;
   }
 
 /* 提示框 */
