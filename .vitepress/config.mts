@@ -43,29 +43,12 @@ export default defineConfig({
             { text: 'Java 与 Kotlin 中的泛型', link: '/KnowledgeRepo/Java/泛型' },
             { text: 'Java反射', link: '/KnowledgeRepo/Java/Java反射' },
             { text: 'Exception与Error', link: '/KnowledgeRepo/Java/Exception_Error' },
-          
           ]
         },
-        // {
-        //   text: 'Android',
-        //   items: [
-        //     // { text: 'Index', link: '/KnowledgeRepo/index' },
-        //     { text: 'Java', link: '/Java/main' },
-        //     { text: 'Android', link: '/Android/' }
-        //   ]
-        // }
+        {
+          text: 'Android'
+        }
       ],
-      // 'Android': [
-      //   {
-      //     text: 'Android',
-      //     collapsed: false,
-      //     items: [
-      //       { text: 'Index', link: '/Android/' },
-      //       { text: 'test', link: '/Android/test' },
-      //       { text: 'Two', link: '/Android/two' }
-      //     ]
-      //   }
-      // ]
     },
 
     //本地搜索

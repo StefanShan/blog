@@ -36,6 +36,8 @@ public final class Looper {
 - 在使用完毕后及时 remove
 - 使用弱引用持有存储数据
 
+<br>
+
 # ThreadLocal 原理
 > Q: ThreadLocal 是怎么做到线程间数据隔离的呢？<br>
 > A: 首次使用时会创建一个 Map 赋值给线程的 threadLocals 变量。后面存储数据格式为：key = 创建的 ThreadLocal 对象，value = 传入的值
