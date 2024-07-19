@@ -39,8 +39,9 @@ export default defineConfig({
         {
           text: 'Java',
           items: [
-            { text: '源码解析 ThreadLocal', link: '/KnowledgeRepo/Java/源码解析 ThreadLocal' },
+            { text: '源码解析 ThreadLocal', link: '/KnowledgeRepo/Java/源码解析ThreadLocal' },
             { text: 'Java 与 Kotlin 中的泛型', link: '/KnowledgeRepo/Java/泛型' },
+            { text: 'Java 集合 - List', link: '/KnowledgeRepo/Java/Java集合_List' },
             { text: 'Java反射', link: '/KnowledgeRepo/Java/Java反射' },
             { text: 'Exception与Error', link: '/KnowledgeRepo/Java/Exception_Error' },
           ]
