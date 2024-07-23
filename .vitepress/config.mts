@@ -39,6 +39,7 @@ export default defineConfig({
         {
           text: 'Java',
           items: [
+            { text: '注解生命周期', link: '/KnowledgeRepo/Java/注解' },
             { text: '源码解析 ThreadLocal', link: '/KnowledgeRepo/Java/源码解析ThreadLocal' },
             { text: 'Java 与 Kotlin 中的泛型', link: '/KnowledgeRepo/Java/泛型' },
             { text: 'Java 集合 - List', link: '/KnowledgeRepo/Java/Java集合_List' },
