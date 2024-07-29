@@ -2,6 +2,16 @@
 title: 归档
 ---
 ::: timeline 2024
+<br>
+<br>
+<div class="linkcard">
+  <a href="./KnowledgeRepo//Android/WebView加载优化">
+    <p class="description">探索 WebView 加载优化<br><span> 探索&实验 WebView 加载 H5 秒开优化方式 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="/KnowledgeRepo/Android/img/h5加载优化/固定功能页2.jpg" />
+    </div>
+  </a>
+</div><br>
 <div class="linkcard">
   <a href="./KnowledgeRepo/Java/注解">
     <p class="description">Java注解生命周期<br><span> 面试官：说一下注解生命周期；SOURCE、CLASS、RUNTIME 的区别是什么？ </span></p>

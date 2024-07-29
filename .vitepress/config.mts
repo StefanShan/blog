@@ -48,7 +48,10 @@ export default defineConfig({
           ]
         },
         {
-          text: 'Android'
+          text: 'Android',
+          items: [
+            { text: "探索 WebView 加载优化", link: '/KnowledgeRepo/Android/WebView加载优化'}
+          ]
         }
       ],
     },
