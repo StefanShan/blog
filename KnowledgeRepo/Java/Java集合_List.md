@@ -10,7 +10,7 @@ head:
       content: Java、List、Set、Map、HashMap、
 ---
 # List、Set、Map 关系图
-![](./img/Java集合/List_Set_Map关系图.jpg)
+![](./img/Java集合/List_Set_Map关系图.webp)
 
 # Vector
 

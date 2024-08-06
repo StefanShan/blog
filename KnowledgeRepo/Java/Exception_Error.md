@@ -19,7 +19,7 @@ head:
 # Exception&Error关系图
 <br>
 
-![](/KnowledgeRepo/Java/img/Exception_Error/exception与error类关系图.jpg)
+![](/KnowledgeRepo/Java/img/Exception_Error/exception与error类关系图.webp)
 
 <br>
 

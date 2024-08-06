@@ -54,6 +54,13 @@ export default defineConfig({
           ]
         }
       ],
+      'ThinkSummary':[
+        {text: '转载文章',
+          items: [
+            {text: '【转】万字干货揭秘出海APP成功秘诀：小团队和个人开发者的APP选品指南', link: '/ThinkSummary/揭秘出海APP成功秘诀-APP选品指南'}
+          ]
+        }
+      ]
     },
 
     //本地搜索

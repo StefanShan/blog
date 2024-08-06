@@ -16,7 +16,7 @@ head:
 综上所述，基本可以确定，起始点都是在“用户点击时”，而终点则需要根据实际业务场景来确定，但可确定的一点，终点不是在 webView 的 onPageFinished() 回调时。
 # 优化方式
 WebView 加载 H5 默认流程
-![默认加载流程](./img/h5加载优化/默认流程.jpg)
+![默认加载流程](./img/h5加载优化/默认流程.webp)
 ## WebView 容器创建阶段
 ### WebView 预创建&复用
 > 预创建：可避免 webView 初次创建时初始化内核耗时问题。二次创建的 webView 比第一次创建的耗时明显缩小。
@@ -131,22 +131,22 @@ fun bind(context: Context): WebView{
 ## 下载解析 HTML、CSS、JS 阶段
 ### 预加载
 在应用启动时，将 HTML 下载保存至内存中，这样在启动时可以直接使用内存中的 HTML。在页面关闭时刷新 HTML。
-![](./img/h5加载优化/预加载.jpg)
+![](./img/h5加载优化/预加载.webp)
 ### 预请求
 在用户点击跳转时(路由阶段），提前下载 HTML 页面，在 WebView 初始化之后直接加载已下载的 HTML 页面。
 与预加载的区别在于下载 HTML 的时机。预请求是在用户点击后；预加载是在 App 启动后。
-![](./img/h5加载优化/预请求.jpg)
+![](./img/h5加载优化/预请求.webp)
 ### 模板化
 > 适用于样式单一的页面，如资讯类详情页。
 
 #### 本地模板化+并行加载
 将公共的 CSS、JS 内置到客户端，并且由客户端请求数据，直接填充页面。
-![](./img/h5加载优化/本地模板_并行请求.jpg)
+![](./img/h5加载优化/本地模板_并行请求.webp)
 需要结合 webView 预创建一起使用。在 webView 预创建成功后先加载本地模板，提前完成解析动作，之后直接使用该 webView 加载数据即可。
-![](./img/h5加载优化/本地模板预热_复用.jpg)
+![](./img/h5加载优化/本地模板预热_复用.webp)
 ### 独立缓存
 在加载过程中，通过 shouldInterceptRequest 拦截请求，将由 Native 实现数据请求+缓存（可自行实现缓存，可以利用 OkHttp + 服务端配置实现），如果由缓存则直接复用。此处需注意时效性问题，可以在连接中添加版本号。
-![](./img/h5加载优化/独立缓存.jpg)
+![](./img/h5加载优化/独立缓存.webp)
 ### 离线包
 将 CSS、JS、图片等打包，在 App 启动后下载。在 webView 加载时判断，若要加载资源已在离线包中，则直接加载离线包中的资源。
 ## 获取首屏数据阶段
@@ -173,7 +173,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     // Native 段请求数据（模拟请求）
    Handler(Looper.getMainLooper()).postDelayed({
         val data = "{\n" +
-                "    \"picUrl\": \"https://p6.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/44658970730/341c/8047/eb07/a960603716d5d927a5bfb9c961329f95.jpg\",\n" +
+                "    \"picUrl\": \"https://p6.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/44658970730/341c/8047/eb07/a960603716d5d927a5bfb9c961329f95.webp\",\n" +
                 "    \"title\": \"AI 入门到放弃之 Transformer\",\n" +
                 "    \"clickNum\": 266,\n" +
                 "    \"author\": \"测试数据\",\n" +
@@ -235,18 +235,18 @@ override fun onCreate(savedInstanceState: Bundle?) {
 > 例如：稀土掘金文章详情页
 
 优化方案：WebView 预创建 + 本地模板 + 模板预热 + 并行加载
-![](./img/h5加载优化/资讯类详情页.jpg)
+![](./img/h5加载优化/资讯类详情页.webp)
 ## 活动页面
 > 例如：促销页面
 
 优化方案：WebView 预创建 + 预请求 + 独立缓存 + 并行加载
-![](./img/h5加载优化/活动页.jpg)
+![](./img/h5加载优化/活动页.webp)
 ## 固定样式功能页面
 > 例如：稀土掘金 App 中的抽奖页面。
 
 优化方案：WebView 预创建 + 离线包（HTML、CSS、JS、图片）+ 预加载/预请求 + 并行加载
-![](./img/h5加载优化/固定功能页1.jpg)
-![](./img/h5加载优化/固定功能页2.jpg)
+![](./img/h5加载优化/固定功能页1.webp)
+![](./img/h5加载优化/固定功能页2.webp)
 # 实验Demo地址
 [https://github.com/StefanShan/WebViewDemo](https://github.com/StefanShan/WebViewDemo)
  <table>

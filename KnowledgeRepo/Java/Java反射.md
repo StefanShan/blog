@@ -11,7 +11,7 @@ head:
 ---
 # new 对象的过程
 
-![](/KnowledgeRepo/Java/img/Java%20反射/class文件加载过程.jpg)
+![](/KnowledgeRepo/Java/img/Java%20反射/class文件加载过程.webp)
 <br>
 
 **拓展点：**
@@ -35,9 +35,9 @@ Dog dog = (Dog)cs.newInstance("测试"); //执行没有问题
 ## Method
 ![image.png](/KnowledgeRepo/Java/img/Java%20反射/Java方法映射.webp)
 ## 反射过程
-![](/KnowledgeRepo/Java/img/Java%20反射/Java反射过程.jpg)
+![](/KnowledgeRepo/Java/img/Java%20反射/Java反射过程.webp)
 # 反射API
-![image.png](/KnowledgeRepo/Java/img/Java%20反射/Java反射API.jpg)
+![image.png](/KnowledgeRepo/Java/img/Java%20反射/Java反射API.webp)
 
 ---
 
