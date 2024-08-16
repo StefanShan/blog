@@ -9,17 +9,19 @@ head:
     - name: keywords
       content: Java、Exception、Error
 ---
+# Exception 与 Error 关系
+---
 # Exception
 - 可检查异常
 在源代码中必须显式地进行捕获处理。
-- 不可检查异常
+- 不doc
 即运行时异常，通常可编码避免的逻辑错误。例如：NullPointerException、ArrayIndexOutOfBoundsException
 # Error
 绝大多数的 Error 都会导致程序处于非正常的、不可恢复状态，不便于也不需要捕获。例如：OutOfMemoryError
 # Exception&Error关系图
 <br>
 
-![](/KnowledgeRepo/Java/img/Exception_Error/exception与error类关系图.webp)
+![](/doc/Java/img/Exception_Error/exception与error类关系图.webp)
 
 <br>
 

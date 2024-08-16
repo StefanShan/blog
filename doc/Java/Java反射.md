@@ -9,9 +9,11 @@ head:
     - name: keywords
       content: Java、反射
 ---
+# Java反射
+---
 # new 对象的过程
 
-![](/KnowledgeRepo/Java/img/Java%20反射/class文件加载过程.webp)
+![](/doc/Java/img/Java%20反射/class文件加载过程.webp)
 <br>
 
 **拓展点：**
@@ -31,13 +33,13 @@ Dog dog = (Dog)cs.newInstance("测试"); //执行没有问题
 # 反射
 在 Class 类中有一个静态内部类 ReflectionData，内部持有 Field[] (字段类实例)、Method[] (方法类实例)、Constructor[] (构造器类实例)、Class<?>[] (接口类实例) 等信息。
 ## Field
-![image.png](/KnowledgeRepo/Java/img/Java%20反射/Java字段映射.webp)
+![image.png](/doc/Java/img/Java%20反射/Java字段映射.webp)
 ## Method
-![image.png](/KnowledgeRepo/Java/img/Java%20反射/Java方法映射.webp)
+![image.png](/doc/Java/img/Java%20反射/Java方法映射.webp)
 ## 反射过程
-![](/KnowledgeRepo/Java/img/Java%20反射/Java反射过程.webp)
+![](/doc/Java/img/Java%20反射/Java反射过程.webp)
 # 反射API
-![image.png](/KnowledgeRepo/Java/img/Java%20反射/Java反射API.webp)
+![image.png](/doc/Java/img/Java%20反射/Java反射API.webp)
 
 ---
 

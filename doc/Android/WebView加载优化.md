@@ -9,6 +9,8 @@ head:
     - name: keywords
       content: Android、WebView、H5秒开、加载优化
 ---
+# 探索 WebView 加载优化
+---
 # 指标
 既然做优化，首先得确定 WebView 加载 H5 的耗时如何计算。首先我们来看下互联网头部公司如何确定的：<br>
 今日头条对 WebView 加载 H5 的耗时 = DOM加载完毕(DOMContentLoaded) - 用户点击时。该计算方式是因为头条为资讯类App，H5 着重用于加载文章详情，该场景下文字居多，而且图片等都由原生来渲染，所以不需要等待图片的加载完毕。<br>
@@ -248,7 +250,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ![](./img/h5加载优化/固定功能页1.webp)
 ![](./img/h5加载优化/固定功能页2.webp)
 # 实验Demo地址
-[https://github.com/StefanShan/WebViewDemo](https://github.com/StefanShan/WebViewDemo)
+> [WebViewDemo](https://github.com/StefanShan/simple/tree/master/webViewDemo)
  <table>
     <caption>
     以下数据均为 20次实验平均耗时（去掉最快和最慢的一次）

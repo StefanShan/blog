@@ -9,6 +9,8 @@ head:
     - name: keywords
       content: Java、List、Set、Map、HashMap、
 ---
+# Java 集合 - List 篇
+---
 # List、Set、Map 关系图
 ![](./img/Java集合/List_Set_Map关系图.webp)
 

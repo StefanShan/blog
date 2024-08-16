@@ -9,7 +9,8 @@ head:
     - name: keywords
       content: Java、ThreadLocal
 ---
-
+# 源码解读 ThreadLocal
+---
 # ThreadLocal 是什么？
 ThreadLocal 是线程内部的数据存储类，线程间无法获取对方的 ThreadLocal 存储的数据。
 # ThreadLocal 使用场景
