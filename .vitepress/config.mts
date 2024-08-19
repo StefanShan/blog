@@ -40,6 +40,13 @@ export default defineConfig({
           text: '开发知识库',
           items: [
             {
+              text: '后端开发',
+              collapsed: true,
+              items: [
+                { text: "Docker学习笔记", link: '/doc/后端开发/Docker学习笔记'},
+              ]
+            },
+            {
               text: 'Java',
               collapsed: true,
               items: [
@@ -56,7 +63,8 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
-                { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'}
+                { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'},
+                { text: "性能优化-电量优化", link: '/doc/Android/电量优化'}
               ]
             },
           ]
@@ -73,12 +81,22 @@ export default defineConfig({
           text: '总结与笔记',
           items: [
             {
-              text: '转载',
+              text: '总结与思考',
               collapsed: true,
               items: [
-                { text: '【转】万字干货揭秘出海APP成功秘诀：小团队和个人开发者的APP选品指南', link: '/doc/ThinkSummary/揭秘出海APP成功秘诀-APP选品指南' },
+                { text: '人工智能与大语言模型科普文', link: '/doc/ThinkSummary/人工智能与大语言模型科普文' },
               ]
             },
+            {
+              text: '读书笔记',
+              collapsed: true,
+              items: [
+                { text: '《深入理解Kotlin协程》', link: '/doc/ThinkSummary/深入理解Kotlin协程'},
+                { text: '《横向领导力》', link: '/doc/ThinkSummary/横向领导力'},
+                { text: '《重构—改善既有代码的设计》', link: '/doc/ThinkSummary/重构-改善既有代码的设计'},
+                { text: '《软技能—代码之外的生存指南》', link: '/doc/ThinkSummary/软技能—代码之外的生存指南'}
+              ]
+            }
           ]
         },
         
