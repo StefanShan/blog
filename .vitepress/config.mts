@@ -66,6 +66,7 @@ export default defineConfig({
               items: [
                 { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
                 { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'},
+                { text: "【源码解读系列】源解 Glide - 网络图片加载流程", link: '/doc/Android/源解Glide_加载流程'},
                 { text: "性能优化-电量优化", link: '/doc/Android/电量优化'}
               ]
             },
