@@ -86,6 +86,7 @@ export default defineConfig({
               text: '总结与思考',
               collapsed: true,
               items: [
+                { text: '清华公开课:商业模式的逻辑', link: '/doc/ThinkSummary/清华-商业模式的逻辑' },
                 { text: '人工智能与大语言模型科普文', link: '/doc/ThinkSummary/人工智能与大语言模型科普文' },
               ]
             },

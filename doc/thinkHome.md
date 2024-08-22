@@ -7,6 +7,14 @@ next: false
 # 总结与思考
 ---
 <div class="linkcard">
+  <a href="./ThinkSummary/清华-商业模式的逻辑">
+    <p class="description">“清华公开课: 商业模式的逻辑” 笔记 <br><span> 什么是商业模式？商业模式描述了企业如何创造价值、传递价值、获取价值的基本原理。 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./ThinkSummary/img/商业模式的逻辑/商业模式逻辑.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./ThinkSummary/人工智能与大语言模型科普文">
     <p class="description">人工智能与大语言模型科普文 <br><span> 人工智能（AI）是指用普通计算机程序来呈现人类智能的技术。大语言模型能够理解和生成人类语言，具有强大的语言结构理解和生成能力。 </span></p>
     <div class="logo">

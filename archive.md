@@ -29,6 +29,14 @@ title: 归档
   </a>
 </div><br>
 <div class="linkcard">
+  <a href="./doc/ThinkSummary/清华-商业模式的逻辑">
+    <p class="description">“清华公开课: 商业模式的逻辑” 笔记 <br><span> 什么是商业模式？商业模式描述了企业如何创造价值、传递价值、获取价值的基本原理。 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/ThinkSummary/img/商业模式的逻辑/商业模式逻辑.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/Android/电量优化">
     <p class="description">Android性能优化-电量优化<br><span> 电量分析、常用工具、优化手段 </span></p>
     <div class="logo">
