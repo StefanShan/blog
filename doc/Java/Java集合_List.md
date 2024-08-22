@@ -16,7 +16,7 @@ head:
 
 # Vector
 
-> **同步的** 可增长的数组存储结构。<br>
+> **同步的（读写）** 可增长的数组存储结构。<br>
 > 默认初始容量为 10 个，可自定义初始容量、扩容时新增容量 <br>
 
 > 扩容逻辑：
@@ -70,7 +70,7 @@ public class Vector<E> extends AbstractList<E>
 
     /**
      * @param initialCapacity: 初始容量
-     * @param capacityIncrement: 扩容容量（每次扩容是新增容器大小）
+     * @param capacityIncrement: 扩容容量（每次扩容时新增容器大小）
      */
     public Vector(int initialCapacity, int capacityIncrement) {
         this.elementData = new Object[initialCapacity];
@@ -141,6 +141,7 @@ public synchronized void removeAllElements() {
     modCount++;
 }
 ```
+---
 
 # ArrayList
 
@@ -243,7 +244,7 @@ private int newCapacity(int minCapacity) {
         }
         return minCapacity;
     }
-    //新容器为超出额定最大容量，则使用新容器的容量大小
+    //新容器未超出额定最大容量，则使用新容器的容量大小
     //新容器超出额定最大容量（Integer.MAX_VALUE - 8)
     // 若元素总量超出额定最大容量，则设定容器容量为 Integer.MAX_VALUE，否则为额定最大容量
     return (newCapacity - MAX_ARRAY_SIZE <= 0) ? newCapacity : hugeCapacity(minCapacity);
@@ -280,7 +281,7 @@ public void clear() {
     }     
 }
 ```
-
+---
 # LinkedList
 > **非同步的**双向链表存储结构 <br>
 > 无容量限制 <br>
@@ -419,7 +420,7 @@ public void clear() {
     modCount++;
 }
 ```
-
+---
 # CopyOnWriteArrayList
 
 > **同步的** 可增长的数组存储结构。<br>

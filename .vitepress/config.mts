@@ -53,6 +53,8 @@ export default defineConfig({
                 { text: '实例讲解Java注解生命周期', link: '/doc/Java/注解' },
                 { text: '源码解析 ThreadLocal', link: '/doc/Java/源码解析ThreadLocal' },
                 { text: 'Java 与 Kotlin 中的泛型', link: '/doc/Java/泛型' },
+                { text: 'Java 集合 - Set', link: '/doc/Java/Java集合_Set' },
+                { text: 'Java 集合 - Map', link: '/doc/Java/Java集合_Map' },
                 { text: 'Java 集合 - List', link: '/doc/Java/Java集合_List' },
                 { text: 'Java反射', link: '/doc/Java/Java反射' },
                 { text: 'Exception与Error', link: '/doc/Java/Exception_Error' },
