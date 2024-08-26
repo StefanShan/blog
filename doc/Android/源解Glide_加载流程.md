@@ -9,7 +9,7 @@ head:
     - name: keywords
       content: Android、源码、Glide
 ---
-# 源解 Glide - 络图片
+# 源解 Glide - 网络图片加载流程
 ---
 > 声明：<br>
 > - 基于 Glide.with(this).load("xxxx.webp").into(imageView) 调用
