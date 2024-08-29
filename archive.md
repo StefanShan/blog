@@ -5,6 +5,14 @@ title: 归档
 <br>
 <br>
 <div class="linkcard">
+  <a href="./doc/Android/Gradle_分功能打包">
+    <p class="description"> Gradle 实现分功能打包 <br><span> 如何使用 Gradle productFlovers 实现分功能打包？如：free 与 vip，分渠道。  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/Android/img/分功能打包/同一个module.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/Android/RecyclerView有效曝光">
     <p class="description">RecycerView 有效曝光埋点实现方案<br><span> 最近参加面试，被问到一个实景问题：RecyclerView 如何实现曝光埋点？  </span></p>
     <div class="logo">
@@ -32,7 +40,7 @@ title: 归档
   <a href="./doc/Android/源解Glide_图片缓存">
     <p class="description"> 【源码解读】源解 Glide - 图片缓存<br><span> 通过阅读 Glide 源码，了解磁盘缓存、内存缓存、BitmapPool 存储结构、存入与取出时机   </span></p>
     <div class="logo">
-        <img alt="Logo" src="/img/article_def_logo.webp" />
+        <img alt="Logo" src="./doc/Android/img/glide/glide_logo.webp" />
     </div>
   </a>
 </div><br>
@@ -40,7 +48,7 @@ title: 归档
   <a href="./doc/Android/源解Glide_监听者">
     <p class="description"> 【源码解读】源解 Glide - 监听者<br><span> 通过阅读 Glide 源码，了解如何监听生命周期变化、网络变化、内存变化  </span></p>
     <div class="logo">
-        <img alt="Logo" src="/img/article_def_logo.webp" />
+        <img alt="Logo" src="./doc/Android/img/glide/glide_logo.webp" />
     </div>
   </a>
 </div><br>
@@ -48,7 +56,7 @@ title: 归档
   <a href="./doc/Android/源解Glide_加载流程">
     <p class="description">【源码解读】源解 Glide - 网络图片加载流程<br><span>  通过阅读 Glide 源码，了解从调用 API 到图片显示都经历了什么 </span></p>
     <div class="logo">
-        <img alt="Logo" src="/img/article_def_logo.webp" />
+        <img alt="Logo" src="./doc/Android/img/glide/glide_logo.webp" />
     </div>
   </a>
 </div><br>

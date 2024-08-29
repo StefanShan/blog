@@ -7,12 +7,10 @@
   --vp-custom-block-tip-bg: var(#1E88E5); /*提示框背景颜色*/
 }
 
-/* h1 {
-  background: -webkit-linear-gradient(-45deg, #e43498 5%, #5ad7dd 15%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+.vp-doc h2{
+  margin: 16px 0 16px;
+  padding-top: 16px;
+}
 
 /* .vitepress\theme\style\var.css */
 /* 引用块 */

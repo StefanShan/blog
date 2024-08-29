@@ -64,6 +64,7 @@ export default defineConfig({
               text: 'Android',
               collapsed: true,
               items: [
+                { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
                 { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
                 { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'},
                 { text: "【源码解读】源解 Glide - 图片缓存", link: '/doc/Android/源解Glide_图片缓存'},
@@ -78,6 +79,7 @@ export default defineConfig({
           text: '开发总结',
           collapsed: true,
           items: [
+            { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
             { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
             { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'}
           ]
