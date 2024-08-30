@@ -4,11 +4,78 @@ footer: true
 prev: false
 next: false
 ---
+# Android
+---
+<div class="linkcard">
+  <a href="./Android/Gradle编译优化">
+    <p class="description"> Android性能优化-编译优化 <br><span> 探索常见Android编译检测与优化方式  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/编译优化/生命周期.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./Android/Gradle_分功能打包">
+    <p class="description"> Gradle 实现分功能打包 <br><span> 如何使用 Gradle productFlovers 实现分功能打包？如：free 与 vip，分渠道。  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/分功能打包/同一个module.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./Android/RecyclerView有效曝光">
+    <p class="description">RecycerView 有效曝光埋点实现方案<br><span> 最近参加面试，被问到一个实景问题：RecyclerView 如何实现曝光埋点？  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="/img/article_def_logo.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./Android/WebView加载优化">
+    <p class="description">探索 WebView 加载优化<br><span> 探索&实验 WebView 加载 H5 秒开优化方式 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="/doc/Android/img/h5加载优化/固定功能页2.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./Android/源解Glide_图片缓存">
+    <p class="description"> 【源码解读】源解 Glide - 图片缓存<br><span> 通过阅读 Glide 源码，了解磁盘缓存、内存缓存、BitmapPool 存储结构、存入与取出时机 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/glide/glide_logo.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./Android/源解Glide_监听者">
+    <p class="description"> 【源码解读】源解 Glide - 监听者<br><span> 通过阅读 Glide 源码，了解如何监听生命周期变化、网络变化、内存变化  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/glide/glide_logo.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./Android/源解Glide_加载流程">
+    <p class="description"> 【源码解读】源解 Glide - 网络图片加载流程<br><span> 通过阅读 Glide 源码，了解从调用 API 到图片显示都经历了什么  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/glide/glide_logo.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./Android/电量优化">
+    <p class="description">Android性能优化-电量优化<br><span> 电量分析、常用工具、优化手段 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/电量优化/系统电量服务.webp" />
+    </div>
+  </a>
+</div><br>
+
 # 后端开发
 ---
 <div class="linkcard">
   <a href="./后端开发/Docker学习笔记">
-    <p class="description">/Docker学习笔记 <br><span> 常用 docker指令、目录挂载、自定义网络、自定义镜像、DockerCompose </span></p>
+    <p class="description">Docker学习笔记 <br><span> 常用 docker指令、目录挂载、自定义网络、自定义镜像、DockerCompose </span></p>
     <div class="logo">
         <img alt="Logo" src="./后端开发/img/docker/自定义镜像.webp" />
     </div>
@@ -82,61 +149,3 @@ next: false
   </a>
 </div><br>
 
-# Android
----
-<div class="linkcard">
-  <a href="./Android/Gradle_分功能打包">
-    <p class="description"> Gradle 实现分功能打包 <br><span> 如何使用 Gradle productFlovers 实现分功能打包？如：free 与 vip，分渠道。  </span></p>
-    <div class="logo">
-        <img alt="Logo" src="./Android/img/分功能打包/同一个module.webp" />
-    </div>
-  </a>
-</div><br>
-<div class="linkcard">
-  <a href="./Android/RecyclerView有效曝光">
-    <p class="description">RecycerView 有效曝光埋点实现方案<br><span> 最近参加面试，被问到一个实景问题：RecyclerView 如何实现曝光埋点？  </span></p>
-    <div class="logo">
-        <img alt="Logo" src="/img/article_def_logo.webp" />
-    </div>
-  </a>
-</div><br>
-<div class="linkcard">
-  <a href="./Android/WebView加载优化">
-    <p class="description">探索 WebView 加载优化<br><span> 探索&实验 WebView 加载 H5 秒开优化方式 </span></p>
-    <div class="logo">
-        <img alt="Logo" src="/doc/Android/img/h5加载优化/固定功能页2.webp" />
-    </div>
-  </a>
-</div><br>
-<div class="linkcard">
-  <a href="./Android/源解Glide_图片缓存">
-    <p class="description"> 【源码解读】源解 Glide - 图片缓存<br><span> 通过阅读 Glide 源码，了解磁盘缓存、内存缓存、BitmapPool 存储结构、存入与取出时机 </span></p>
-    <div class="logo">
-        <img alt="Logo" src="./Android/img/glide/glide_logo.webp" />
-    </div>
-  </a>
-</div><br>
-<div class="linkcard">
-  <a href="./Android/源解Glide_监听者">
-    <p class="description"> 【源码解读】源解 Glide - 监听者<br><span> 通过阅读 Glide 源码，了解如何监听生命周期变化、网络变化、内存变化  </span></p>
-    <div class="logo">
-        <img alt="Logo" src="./Android/img/glide/glide_logo.webp" />
-    </div>
-  </a>
-</div><br>
-<div class="linkcard">
-  <a href="./Android/源解Glide_加载流程">
-    <p class="description"> 【源码解读】源解 Glide - 网络图片加载流程<br><span> 通过阅读 Glide 源码，了解从调用 API 到图片显示都经历了什么  </span></p>
-    <div class="logo">
-        <img alt="Logo" src="./Android/img/glide/glide_logo.webp" />
-    </div>
-  </a>
-</div><br>
-<div class="linkcard">
-  <a href="./Android/电量优化">
-    <p class="description">Android性能优化-电量优化<br><span> 电量分析、常用工具、优化手段 </span></p>
-    <div class="logo">
-        <img alt="Logo" src="./Android/img/电量优化/系统电量服务.webp" />
-    </div>
-  </a>
-</div><br>

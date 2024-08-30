@@ -16,6 +16,7 @@ head:
 分功能打包有两个场景:
 - 在一个 module 中拆分。
 - 在不同 module 中拆分。如: 华为、小米上架的 apk 包含的功能不一样。
+
 如果要实现分功能打包，必不可免的要用到 Gradle 的 `productFlavors`功能。对该功能不了解可看[该文章](https://developer.android.google.cn/build/build-variants?hl=zh-cn) <br>
 下面按照这个两个场景，来分别用 Demo 来实现一下。
 # 实现

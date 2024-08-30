@@ -37,6 +37,14 @@ features:
 <br>
 <br>
 <div class="linkcard">
+  <a href="./doc/Android/Gradle编译优化">
+    <p class="description"> Android性能优化-编译优化 <br><span> 探索常见Android编译检测与优化方式  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/Android/img/编译优化/生命周期.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/Android/Gradle_分功能打包">
     <p class="description"> Gradle 实现分功能打包 <br><span> 如何使用 Gradle productFlovers 实现分功能打包？如：free 与 vip，分渠道。  </span></p>
     <div class="logo">

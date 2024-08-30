@@ -64,6 +64,7 @@ export default defineConfig({
               text: 'Android',
               collapsed: true,
               items: [
+                { text: "性能优化-编译优化", link: '/doc/Android/Gradle编译优化'},
                 { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
                 { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
                 { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'},
