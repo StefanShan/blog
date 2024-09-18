@@ -64,6 +64,7 @@ export default defineConfig({
               text: 'Android',
               collapsed: true,
               items: [
+                { text: "性能优化-编译优化之模块aar化", link: '/doc/Android/模块打包aar'},
                 { text: "性能优化-编译优化", link: '/doc/Android/Gradle编译优化'},
                 { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
                 { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},

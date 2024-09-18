@@ -337,7 +337,7 @@ abstract public class CreateMD5 extends SourceTask {
 
 ## 优化项目
 ### 组件化
-组件化主要目的是将项目拆分成多 Module 格式，提高 Build Cache 命中。具体如何改造需要业务需求拆分。
+组件化主要目的是将项目拆分成多 Module 格式，提高 Build Cache 命中，以及为 aar 化做铺垫。具体如何改造需要业务需求拆分。
 ### aar化
 将模块aar化发布到maven仓库中，工程中采用坐标进行依赖（不再进行源码依赖）。开发时将对应模块切换成源码依赖即可。<br>
 切换方式建议使用gradle官方提供的substitute方法，项目中使用原生api、implimentation依赖即可。

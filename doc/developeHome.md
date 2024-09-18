@@ -4,6 +4,14 @@ prev: false
 next: false
 ---
 <div class="linkcard">
+  <a href="./Android/Gradle_分功能打包">
+    <p class="description"> Gradle 实现分功能打包 <br><span> 如何使用 Gradle productFlovers 实现分功能打包？如：free 与 vip，分渠道。  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/分功能打包/同一个module.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./Android/RecyclerView有效曝光">
     <p class="description">RecycerView 有效曝光埋点实现方案<br><span> 最近参加面试，被问到一个实景问题：RecyclerView 如何实现曝光埋点？  </span></p>
     <div class="logo">

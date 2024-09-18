@@ -7,6 +7,14 @@ next: false
 # Android
 ---
 <div class="linkcard">
+  <a href="./Android/模块打包aar">
+    <p class="description"> Android性能优化-编译优化之模块aar化 <br><span> 自定义 Gradle 插件，支持模块自动打包aar，以及源码与aar切换  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Android/img/模块aar化/思路图.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./Android/Gradle编译优化">
     <p class="description"> Android性能优化-编译优化 <br><span> 探索常见Android编译检测与优化方式  </span></p>
     <div class="logo">
@@ -32,7 +40,7 @@ next: false
 </div><br>
 <div class="linkcard">
   <a href="./Android/WebView加载优化">
-    <p class="description">探索 WebView 加载优化<br><span> 探索&实验 WebView 加载 H5 秒开优化方式 </span></p>
+    <p class="description">Android性能优化-探索 WebView 加载优化<br><span> 探索&实验 WebView 加载 H5 秒开优化方式 </span></p>
     <div class="logo">
         <img alt="Logo" src="/doc/Android/img/h5加载优化/固定功能页2.webp" />
     </div>
