@@ -37,6 +37,14 @@ features:
 <br>
 <br>
 <div class="linkcard">
+  <a href="./doc/Android/Gradle8实现简易路由">
+    <p class="description"> 基于 transfrom 替代方案实现简易路由框架 <br><span> 基于 Gradle8.0 及以上版本提供的 transform 替代方案实现简易路由框架 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/Android/img/简易路由/SimpleRouter.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/Android/模块打包aar">
     <p class="description"> Android性能优化-编译优化之模块aar化 <br><span> 自定义 Gradle 插件，支持模块自动打包aar，以及源码与aar切换  </span></p>
     <div class="logo">

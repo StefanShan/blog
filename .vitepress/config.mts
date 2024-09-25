@@ -64,6 +64,7 @@ export default defineConfig({
               text: 'Android',
               collapsed: true,
               items: [
+                { text: "基于 transfrom 替代方案实现简易路由框架", link: '/doc/Android/Gradle8实现简易路由'},
                 { text: "性能优化-编译优化之模块aar化", link: '/doc/Android/模块打包aar'},
                 { text: "性能优化-编译优化", link: '/doc/Android/Gradle编译优化'},
                 { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
