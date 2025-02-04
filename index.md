@@ -37,6 +37,14 @@ features:
 <br>
 <br>
 <div class="linkcard">
+  <a href="./doc/Flutter/Navigator 路由原理">
+    <p class="description"> Navigator 路由原理 <br><span> Flutter Navigator 路由原理 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/Flutter/img/navigator原理/push.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/Android/Gradle8实现简易路由">
     <p class="description"> 基于 transfrom 替代方案实现简易路由框架 <br><span> 基于 Gradle8.0 及以上版本提供的 transform 替代方案实现简易路由框架 </span></p>
     <div class="logo">

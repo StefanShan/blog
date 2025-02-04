@@ -4,6 +4,16 @@ footer: true
 prev: false
 next: false
 ---
+# Flutter
+---
+<div class="linkcard">
+  <a href="./Flutter/Navigator 路由原理">
+    <p class="description"> Navigator 路由原理 <br><span> Flutter Navigator 路由跳转原理 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Flutter/img/navigator原理/push.webp" />
+    </div>
+  </a>
+</div><br>
 # Android
 ---
 <div class="linkcard">

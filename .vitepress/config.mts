@@ -40,6 +40,29 @@ export default defineConfig({
           text: '开发知识库',
           items: [
             {
+              text: 'Flutter',
+              collapsed: true,
+              items: [
+                { text: "Navigator 路由原理", link: '/doc/Flutter/Navigator 路由原理'},
+              ]
+            },
+            {
+              text: 'Android',
+              collapsed: true,
+              items: [
+                { text: "基于 transfrom 替代方案实现简易路由框架", link: '/doc/Android/Gradle8实现简易路由'},
+                { text: "性能优化-编译优化之模块aar化", link: '/doc/Android/模块打包aar'},
+                { text: "性能优化-编译优化", link: '/doc/Android/Gradle编译优化'},
+                { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
+                { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
+                { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'},
+                { text: "【源码解读】源解 Glide - 图片缓存", link: '/doc/Android/源解Glide_图片缓存'},
+                { text: "【源码解读】源解 Glide - 监听者", link: '/doc/Android/源解Glide_监听者'},
+                { text: "【源码解读】源解 Glide - 网络图片加载流程", link: '/doc/Android/源解Glide_加载流程'},
+                { text: "性能优化-电量优化", link: '/doc/Android/电量优化'}
+              ]
+            },
+            {
               text: '后端开发',
               collapsed: true,
               items: [
@@ -58,22 +81,6 @@ export default defineConfig({
                 { text: 'Java 集合 - List', link: '/doc/Java/Java集合_List' },
                 { text: 'Java反射', link: '/doc/Java/Java反射' },
                 { text: 'Exception与Error', link: '/doc/Java/Exception_Error' },
-              ]
-            },
-            {
-              text: 'Android',
-              collapsed: true,
-              items: [
-                { text: "基于 transfrom 替代方案实现简易路由框架", link: '/doc/Android/Gradle8实现简易路由'},
-                { text: "性能优化-编译优化之模块aar化", link: '/doc/Android/模块打包aar'},
-                { text: "性能优化-编译优化", link: '/doc/Android/Gradle编译优化'},
-                { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
-                { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
-                { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'},
-                { text: "【源码解读】源解 Glide - 图片缓存", link: '/doc/Android/源解Glide_图片缓存'},
-                { text: "【源码解读】源解 Glide - 监听者", link: '/doc/Android/源解Glide_监听者'},
-                { text: "【源码解读】源解 Glide - 网络图片加载流程", link: '/doc/Android/源解Glide_加载流程'},
-                { text: "性能优化-电量优化", link: '/doc/Android/电量优化'}
               ]
             },
           ]
