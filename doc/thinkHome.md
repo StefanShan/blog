@@ -26,6 +26,14 @@ next: false
 # 读书笔记
 ---
 <div class="linkcard">
+  <a href="./ThinkSummary/认知觉醒">
+    <p class="description"> 《认知觉醒：开启自我改变的原动力》读书笔记 <br><span> 通过“大脑构造、潜意识、元认知”等思维规律，你将真正看清自己；通过“深度学习、关联、反馈”事物规律，你将洞悉如何真正成事！ </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./ThinkSummary/img/认知觉醒/cover.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./ThinkSummary/深入理解Kotlin协程">
     <p class="description">《深入理解Kotlin协程》读书笔记 <br><span> 一部从工作机制、实现原理、应用场景、使用方法、实践技巧、标准库、框架、应用案例等多个维度全面讲解Kotlin协程的专著。 </span></p>
     <div class="logo">

@@ -43,6 +43,7 @@ export default defineConfig({
               text: 'Flutter',
               collapsed: true,
               items: [
+                { text: "GetX 路由原理", link: '/doc/Flutter/GetX 路由原理'},
                 { text: "Navigator 路由原理", link: '/doc/Flutter/Navigator 路由原理'},
               ]
             },
@@ -109,9 +110,10 @@ export default defineConfig({
               text: '读书笔记',
               collapsed: true,
               items: [
+                { text: '《认知觉醒：开启自我改变的原动力》', link: '/doc/ThinkSummary/认知觉醒'},
                 { text: '《深入理解Kotlin协程》', link: '/doc/ThinkSummary/深入理解Kotlin协程'},
                 { text: '《横向领导力》', link: '/doc/ThinkSummary/横向领导力'},
-                { text: '《重构—改善既有代码的设计》', link: '/doc/ThinkSummary/重构-改善既有代码的设计'},
+                { text: '《重构—改善既有代码的设计》', link: '/doc/ThinkSummary/重构—改善既有代码的设计'},
                 { text: '《软技能—代码之外的生存指南》', link: '/doc/ThinkSummary/软技能—代码之外的生存指南'}
               ]
             }

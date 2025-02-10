@@ -5,8 +5,24 @@ title: 归档
 <br>
 <br>
 <div class="linkcard">
+  <a href="./doc/Flutter/GetX 路由原理">
+    <p class="description"> GetX 路由原理 <br><span> 带你了解 Flutter GetX 框架中是如何实现路由逻辑的 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/Flutter/img/GetX路由原理/getX路由.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
+  <a href="./doc/ThinkSummary/认知觉醒">
+    <p class="description"> 《认知觉醒：开启自我改变的原动力》读书笔记 <br><span> 通过“大脑构造、潜意识、元认知”等思维规律，你将真正看清自己；通过“深度学习、关联、反馈”事物规律，你将洞悉如何真正成事！ </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/ThinkSummary/img/认知觉醒/cover.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/Flutter/Navigator 路由原理">
-    <p class="description"> Navigator 路由原理 <br><span> Flutter Navigator 路由原理 </span></p>
+    <p class="description"> Navigator 路由原理 <br><span> 带你了解 Flutter Navigator.push()、Navigator.pop() 等是如何实现路由逻辑的 </span></p>
     <div class="logo">
         <img alt="Logo" src="./doc/Flutter/img/navigator原理/push.webp" />
     </div>

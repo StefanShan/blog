@@ -128,7 +128,7 @@ class NavigatorState extends State<Navigator> with TickerProviderStateMixin, Res
     );
 }
 ```
-### 小结
+**小结**
 要使用 Navigator 实现路由跳转，必须在顶层使用 MaterialApp 进行包装。通过上面代码可知，使用 MaterialApp 的主要目的是创建 Navigator Widget，其内部包含了主要路由跳转逻辑。
 
 ## 初始路由
@@ -250,7 +250,7 @@ class NavigatorState extends State<Navigator> with TickerProviderStateMixin, Res
   }
 }
 ```
-### 小结
+**小结**
 初始路由逻辑执行实际在 NavigatorState.restoreState() 中，其获取初始路由名称，未指定则默认为“/”，然后调用 onGenerateInitialRoutes() 获取 name 映射的 route，未指定则默认指定 NavigatorState.defaultGenerateInitialRoutes()，其内部会调用 _WidgetsAppState._onGenerateRoute() 将初始路由指定为 home。
 
 ## Navigator.push()
@@ -419,7 +419,7 @@ abstract class OverlayRoute<T> extends Route<T> {
   }
 }
 ```
-### 小结
+**小结**
 跳转调用 `Navigator.of()` 找到顶层的 Navigator，然后调用其 `push()` 触发跳转，通过 MaterialPageRoute 来实现具体跳转动画逻辑。<br>
 MaterialPageRoute 内部实现具体跳转动画逻辑，具体为添加转场动画，将跳转页面添加到 Overlay 中。
 
@@ -460,7 +460,7 @@ class NavigatorState extends State<Navigator> with TickerProviderStateMixin, Res
   }
 }
 ```
-### 小结
+**小结**
 跳转逻辑共用 `push()` 部分，通过 `onGenerateRoute()` 实现依赖反转，由调用者实现路由名与路由实例的映射管理。
 
 ## Navigator.pushReplacement()
@@ -577,7 +577,7 @@ class _RouteEntry extends RouteTransitionRecord {
   }
 }
 ```
-### 小结
+**小结**
 `pushReplacement()` 方法用于跳转并关闭当前页面，跳转逻辑与 `push()` 一致，增加了跳转完成后，关闭当前页面的逻辑。<br>
 关闭逻辑主要体现在，添加新路由实例前，将最上层路由实例（当前页面）标记为 complete 状态，在跳转完成后继续状态逻辑判断时，实现关闭逻辑（即从 history 中移除）。
 
@@ -605,7 +605,7 @@ class NavigatorState extends State<Navigator> with TickerProviderStateMixin, Res
   }
 }
 ```
-### 小结
+**小结**
 与 `push()` 逻辑基本一致，在执行跳转前先根据调用者设置的条件判断移除符合的路由实例。
 
 ## Navigator.pop()
@@ -711,7 +711,7 @@ abstract class OverlayRoute<T> extends Route<T> {
   }
 }
 ```
-### 小结
+**小结**
 `pop()` 逻辑与 `pushReplacement()` 中跳转后销毁上一个页面逻辑类似，初始状态为 pop，最后状态改为 dispose，从 history 中移除。
 
 ## 总结

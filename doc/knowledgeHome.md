@@ -7,8 +7,16 @@ next: false
 # Flutter
 ---
 <div class="linkcard">
+  <a href="./Flutter/GetX 路由原理">
+    <p class="description"> GetX 路由原理 <br><span> 带你了解 Flutter GetX 框架中是如何实现路由逻辑的 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Flutter/img/GetX路由原理/getX路由.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./Flutter/Navigator 路由原理">
-    <p class="description"> Navigator 路由原理 <br><span> Flutter Navigator 路由跳转原理 </span></p>
+    <p class="description"> Navigator 路由原理 <br><span>  带你了解 Flutter Navigator.push()、Navigator.pop() 等是如何实现路由逻辑的 </span></p>
     <div class="logo">
         <img alt="Logo" src="./Flutter/img/navigator原理/push.webp" />
     </div>
