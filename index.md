@@ -37,6 +37,14 @@ features:
 <br>
 <br>
 <div class="linkcard">
+  <a href="./doc/ThinkSummary/我的外婆从不内耗">
+    <p class="description"> 《我的外婆，从不内耗》读书笔记 <br><span> 在我成长的过程中，是外婆的言传身教治好了我所有的焦虑和拧巴，纠结和自卑。 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/ThinkSummary/img/book/我的外婆从不内耗.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/Flutter/GetX 路由原理">
     <p class="description"> GetX 路由原理 <br><span> 带你了解 Flutter GetX 框架中是如何实现路由逻辑的 </span></p>
     <div class="logo">

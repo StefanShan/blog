@@ -110,6 +110,7 @@ export default defineConfig({
               text: '读书笔记',
               collapsed: true,
               items: [
+                { text: '《我的外婆，从不内耗》', link: '/doc/ThinkSummary/我的外婆从不内耗'},
                 { text: '《认知觉醒：开启自我改变的原动力》', link: '/doc/ThinkSummary/认知觉醒'},
                 { text: '《深入理解Kotlin协程》', link: '/doc/ThinkSummary/深入理解Kotlin协程'},
                 { text: '《横向领导力》', link: '/doc/ThinkSummary/横向领导力'},

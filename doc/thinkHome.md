@@ -26,6 +26,14 @@ next: false
 # 读书笔记
 ---
 <div class="linkcard">
+  <a href="./ThinkSummary/我的外婆从不内耗">
+    <p class="description"> 《我的外婆，从不内耗》读书笔记 <br><span> 在我成长的过程中，是外婆的言传身教治好了我所有的焦虑和拧巴，纠结和自卑。 </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./ThinkSummary/img/book/我的外婆从不内耗.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./ThinkSummary/认知觉醒">
     <p class="description"> 《认知觉醒：开启自我改变的原动力》读书笔记 <br><span> 通过“大脑构造、潜意识、元认知”等思维规律，你将真正看清自己；通过“深度学习、关联、反馈”事物规律，你将洞悉如何真正成事！ </span></p>
     <div class="logo">
