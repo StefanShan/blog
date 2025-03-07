@@ -4,6 +4,14 @@ prev: false
 next: false
 ---
 <div class="linkcard">
+  <a href="./Flutter/FlutterBluePlus封装">
+    <p class="description"> 手把手教你如何封装 flutter_blue_plus <br><span> 详细介绍 flutter_blue_plus 封装思路、实现、坑点。  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Flutter/img/flutter_blue_plus/flutterblueplus.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./Android/Gradle_分功能打包">
     <p class="description"> Gradle 实现分功能打包 <br><span> 如何使用 Gradle productFlovers 实现分功能打包？如：free 与 vip，分渠道。  </span></p>
     <div class="logo">

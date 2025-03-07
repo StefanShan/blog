@@ -43,6 +43,7 @@ export default defineConfig({
               text: 'Flutter',
               collapsed: true,
               items: [
+                { text: "手把手教你如何封装 flutter_blue_plus", link: '/doc/Flutter/FlutterBluePlus封装'},
                 { text: "GetX 路由原理", link: '/doc/Flutter/GetX 路由原理'},
                 { text: "Navigator 路由原理", link: '/doc/Flutter/Navigator 路由原理'},
               ]
@@ -90,6 +91,7 @@ export default defineConfig({
           text: '开发总结',
           collapsed: true,
           items: [
+            { text: "手把手教你如何封装 flutter_blue_plus", link: '/doc/Flutter/FlutterBluePlus封装'},
             { text: "Gradle 分功能打包", link: '/doc/Android/Gradle_分功能打包'},
             { text: "探索 WebView 加载优化", link: '/doc/Android/WebView加载优化'},
             { text: "RecycerView 有效曝光埋点实现方案", link: '/doc/Android/RecyclerView有效曝光'}

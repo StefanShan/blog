@@ -5,6 +5,14 @@ title: 归档
 <br>
 <br>
 <div class="linkcard">
+  <a href="./doc/Flutter/FlutterBluePlus封装">
+    <p class="description"> 手把手教你如何封装 flutter_blue_plus <br><span> 详细介绍 flutter_blue_plus 封装思路、实现、坑点。  </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./doc/Flutter/img/flutter_blue_plus/flutterblueplus.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./doc/ThinkSummary/我的外婆从不内耗">
     <p class="description"> 《我的外婆，从不内耗》读书笔记 <br><span> 在我成长的过程中，是外婆的言传身教治好了我所有的焦虑和拧巴，纠结和自卑。 </span></p>
     <div class="logo">
