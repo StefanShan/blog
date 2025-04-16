@@ -43,6 +43,7 @@ export default defineConfig({
               text: 'Flutter',
               collapsed: true,
               items: [
+                { text: "GetX 状态管理原理", link: '/doc/Flutter/GetX 状态管理原理'},
                 { text: "手把手教你如何封装 flutter_blue_plus", link: '/doc/Flutter/FlutterBluePlus封装'},
                 { text: "GetX 路由原理", link: '/doc/Flutter/GetX 路由原理'},
                 { text: "Navigator 路由原理", link: '/doc/Flutter/Navigator 路由原理'},

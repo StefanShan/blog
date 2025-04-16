@@ -7,7 +7,7 @@ head:
 ---
 # GetX 路由原理
 ---
-![](./img/GetX路由原理/getX路由.webp)
+![](./img/GetX/getX路由.webp)
 # 源码解读
 ## GetMaterialApp
 ```dart

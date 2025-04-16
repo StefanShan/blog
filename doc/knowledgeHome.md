@@ -7,6 +7,14 @@ next: false
 # Flutter
 ---
 <div class="linkcard">
+  <a href="./Flutter/GetX 状态管理原理">
+    <p class="description"> GetX 状态管理原理 <br><span> 带你了解 Flutter GetX 框架中是如何实现状态管理的（GetBuilder、Obx） </span></p>
+    <div class="logo">
+        <img alt="Logo" src="./Flutter/img/GetX/getX.webp" />
+    </div>
+  </a>
+</div><br>
+<div class="linkcard">
   <a href="./Flutter/FlutterBluePlus封装">
     <p class="description"> 手把手教你如何封装 flutter_blue_plus <br><span> 详细介绍 flutter_blue_plus 封装思路、实现、坑点。  </span></p>
     <div class="logo">
@@ -18,7 +26,7 @@ next: false
   <a href="./Flutter/GetX 路由原理">
     <p class="description"> GetX 路由原理 <br><span> 带你了解 Flutter GetX 框架中是如何实现路由逻辑的 </span></p>
     <div class="logo">
-        <img alt="Logo" src="./Flutter/img/GetX路由原理/getX路由.webp" />
+        <img alt="Logo" src="./Flutter/img/GetX/getX.webp" />
     </div>
   </a>
 </div><br>
